@@ -60,13 +60,13 @@ describe("GET /api/user", () => {
 
 describe("GET /api/user/:id", () => {
     // Mock the findUnique method of the user model to return a user object only when the id is 1
-    const findUniqueMock = PrismaClientMock.user.findUnique.mockImplementation(({ where }) => {
+    const findUniqueMock = (PrismaClientMock.user.findUnique as jest.Mock).mockImplementation(({ where }) => {
         return where.id === 1
-            ? ({
+            ? {
                   id: 1,
                   username: "test",
                   password: "test"
-              } as any)
+              }
             : null;
     });
 
@@ -110,12 +110,12 @@ describe("GET /api/user/:id", () => {
 
 describe("POST /api/user", () => {
     // Mock the create method of the user model to return a user object with an id of 1 and the username and password provided
-    const createMock = PrismaClientMock.user.create.mockImplementation(({ data }) => {
+    const createMock = (PrismaClientMock.user.create as jest.Mock).mockImplementation(({ data }) => {
         return {
             id: 1,
             username: data.username,
             password: data.password
-        } as any;
+        };
     });
 
     describe("when the request is valid", () => {
@@ -154,13 +154,13 @@ describe("POST /api/user", () => {
 });
 
 describe("PUT /api/user/:id", () => {
-    const updateMock = PrismaClientMock.user.update.mockImplementation(({ where, data }) => {
+    const updateMock = (PrismaClientMock.user.update as jest.Mock).mockImplementation(({ where, data }) => {
         return where.id === 1
-            ? ({
+            ? {
                   id: 1,
                   username: data.username,
                   password: data.password
-              } as any)
+              }
             : null;
     });
 
@@ -216,8 +216,8 @@ describe("PUT /api/user/:id", () => {
 });
 
 describe("DELETE /api/user/:id", () => {
-    const deleteMock = PrismaClientMock.user.delete.mockImplementation(({ where }) => {
-        return where.id === 1 ? ({ id: 1, username: "test", password: "test" } as any) : null;
+    const deleteMock = (PrismaClientMock.user.delete as jest.Mock).mockImplementation(({ where }) => {
+        return where.id === 1 ? { id: 1, username: "test", password: "test" } : null;
     });
 
     describe("when the request is valid", () => {

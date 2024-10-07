@@ -1,6 +1,6 @@
 import { Config } from "jest";
 import { pathsToModuleNameMapper } from "ts-jest";
-const { compilerOptions } = require("./tsconfig.json");
+import { compilerOptions } from "./tsconfig.json";
 
 export default {
     clearMocks: true,

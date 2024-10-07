@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 
 // A middleware function that logs the duration of each request to the console
-export async function logMiddleware(req: Request, res: Response, next: Function) {
+export async function logMiddleware(req: Request, res: Response, next: NextFunction) {
     // Get the timestamp of the request in the format of "YYYY-MM-DD HH:MM:SS"
     const date = `${new Date().toISOString().replace("T", " ").replace("Z", "").substring(0, 19)}`;
 
