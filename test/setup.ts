@@ -11,6 +11,7 @@ import { mockDeep } from "jest-mock-extended";
 const PrismaClientMock = mockDeep<PrismaClient>();
 
 // Set the singleton Prisma client instance on the Service class to the mocked Prisma client
+// Test
 //eslint-disable-next-line
 //@ts-ignore
 jest.spyOn(Service.prototype, "client", "get").mockReturnValue(PrismaClientMock);
