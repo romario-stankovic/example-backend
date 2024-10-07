@@ -1,0 +1,44 @@
+{
+    "name": "backend-example",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon src/index.ts",
+        "test": "jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@prisma/client": "^5.19.1",
+        "bcrypt": "^5.1.1",
+        "dotenv": "^16.4.5",
+        "express": "^4.21.0",
+        "jest-mock-extended": "^4.0.0-beta1",
+        "swagger-jsdoc": "^6.2.8",
+        "swagger-ui-express": "^5.0.1",
+        "typescript": "^5.6.2",
+        "zod": "^3.23.8",
+        "zod-error": "^1.5.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.12.0",
+        "@types/bcrypt": "^5.0.2",
+        "@types/express": "^5.0.0",
+        "@types/jest": "^29.5.13",
+        "@types/supertest": "^6.0.2",
+        "@types/swagger-jsdoc": "^6.0.4",
+        "@types/swagger-ui-express": "^4.1.6",
+        "eslint": "^9.12.0",
+        "globals": "^15.10.0",
+        "jest": "^29.7.0",
+        "nodemon": "^3.1.7",
+        "prisma": "^5.19.1",
+        "supertest": "^7.0.0",
+        "ts-jest": "^29.2.5",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript-eslint": "^8.8.0"
+    }
+}
